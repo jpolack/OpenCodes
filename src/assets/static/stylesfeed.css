@@ -1,14 +1,8 @@
-/* body {
-  padding: 70px auto 30px 100px;
-  text-align: center;
-} */
-
-.box-build {
-  width: 60%;
-  margin: 70px auto;
+body {
+  background: #1c1c1c;
 }
 
-h1{
+h1 {
   color: #FFF;
   font-family: 'Montserrat', sans-serif;
 }
@@ -17,6 +11,7 @@ h1{
   background: #FFF;
   border-radius: 3px;
   padding: 50px;
+  width: 60%;
 }
 
 .wrapper_inputFeld {

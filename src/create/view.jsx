@@ -7,6 +7,7 @@ import { Field, reduxForm } from 'redux-form';
 import Dialog, { DialogTitle } from 'material-ui/Dialog';
 import { CircularProgress } from 'material-ui/Progress';
 
+import '../assets/static/stylescreate.css';
 import '../assets/static/app.css';
 
 const CustomTextField = ({ input, label, contentType }) =>
@@ -72,7 +73,7 @@ export const App = ({ handleSubmit, onSubmit, loading, link, onClose }) => {
             <Field name="from" component={CustomTextField} label="Von wem ist diese Zeitkapsel?" />
             <Field name="openingDate" component={CustomTextField} label="Öffnungsdatum" />
             <Field name="password" component={CustomTextField} label="Passwort" contentType="password" />
-            <Button variant="raised" color="primary" type="submit">
+            <Button style={{ marginTop: 20 }} variant="raised" color="primary" type="submit">
               Jetzt Erstellen
           </Button>
           </div>

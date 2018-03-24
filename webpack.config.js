@@ -31,6 +31,10 @@ module.exports = {
       { from: 'assets/static' },
     ]),
   ],
+  devServer: {
+    port: 3000,
+    historyApiFallback: true,
+  },
   module: {
     rules: [
       {
