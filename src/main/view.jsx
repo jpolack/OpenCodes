@@ -8,17 +8,13 @@ import { Field, reduxForm } from 'redux-form';
 import '../assets/static/app.css';
 
 const CustomTextField = ({ input, label }) =>
-  <div className="inputFeld">
-    <FormControl>
+  <div className="wrapper_inputFeld" >
+    <FormControl className="inputFeld">
       <InputLabel htmlFor="name-simple">{label}</InputLabel>
       <Input id="name-simple" {...input} />
     </FormControl>
   </div>;
 
-CustomTextField.propTypes = {
-  label: PropTypes.string.isRequired,
-  input: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-};
 CustomTextField.propTypes = {
   label: PropTypes.string.isRequired,
   input: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
@@ -29,13 +25,15 @@ export const App = ({ handleSubmit, onSubmit }) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="box-build">
         <h1>Erstell deine eigene Zeitkapsel für dich und deine Freunde</h1>
-        <Field name="title" component={CustomTextField} label="Titel deiner Zeitkapsel" />
-        <Field name="subtitle" component={CustomTextField} label="Beschreibung (optional)" />
-        <Field name="from" component={CustomTextField} label="Von wem ist diese Zeitkapsel?" />
-        <Field name="openingDate" component={CustomTextField} label="Öffnungsdatum" />
-        <Button variant="raised" color="secondary" type="submit">
-          Jetzt Erstellen
-      </Button>
+        <div className="contactForm">
+          <Field name="title" component={CustomTextField} label="Titel deiner Zeitkapsel" />
+          <Field name="subtitle" component={CustomTextField} label="Beschreibung (optional)" />
+          <Field name="from" component={CustomTextField} label="Von wem ist diese Zeitkapsel?" />
+          <Field name="openingDate" component={CustomTextField} label="Öffnungsdatum" />
+          <Button variant="raised" color="secondary" type="submit">
+              Jetzt Erstellen
+          </Button>
+        </div>
       </div>
     </form>
   );

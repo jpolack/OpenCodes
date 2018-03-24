@@ -1,14 +1,24 @@
 body {
-  background: #ccc;
+  background: #1c1c1c;
+  padding: 100px;
 }
 h1{
   color: #FFF;
   font-family: 'Montserrat', sans-serif;
 }
 
-.box-build {
+.contactForm {
+  background: #FFF;
+  border-radius: 3px;
+  padding: 50px;
+  width: 60%;
+}
+
+.wrapper_inputFeld {
+  margin: 10px;
+  width: 250px;
 }
 
 .inputFeld {
-  margin: 10px;
+  width: 250px;
 }
