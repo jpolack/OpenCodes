@@ -1,0 +1,110 @@
+{
+  "name": "opencodes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.jsx",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development --port 3000",
+    "lint": "(eslint . --ext .js --ext .jsx --ext .json)",
+    "lint:fix": "eslint . --fix --ext .js --ext .jsx --ext .json",
+    "test": "npm run lint && jest",
+    "build": "NODE_ENV=production webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpolack/OpenCodes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpolack/OpenCodes/issues"
+  },
+  "homepage": "https://github.com/jpolack/OpenCodes#readme",
+  "dependencies": {
+    "material-ui": "^1.0.0-beta.37",
+    "material-ui-icons": "^1.0.0-beta.36",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.1.2",
+    "react-router-dom": "^4.1.2",
+    "react-router-redux": "^5.0.0-alpha.4",
+    "redux": "^3.7.2",
+    "redux-form": "^7.3.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.0",
+    "babel-jest": "^20.0.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-inline-import": "^2.0.6",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.22.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.10",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-flowtype": "^2.35.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "postcss-calc": "^6.0.1",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.8",
+    "postcss-mixins": "^6.2.0",
+    "postcss-nested": "^2.1.2",
+    "redux-devtools": "^3.4.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.11",
+    "webpack-dev-server": "^3.1.0",
+    "webpack-hot-middleware": "^2.21.2"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/test/setupTestFramework.js",
+    "globals": {
+      "window": {},
+      "__webpack_public_path__": ""
+    },
+    "testRegex": "\\.spec\\.(js|jsx)$",
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/out/**",
+      "!src/app.jsx",
+      "webserver/**/*.{js,jsx}"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/fileMock.js",
+      "\\.css$": "<rootDir>/test/cssMock.js"
+    },
+    "modulePaths": [
+      "src",
+      "<rootDir>"
+    ],
+    "setupFiles": [
+      "<rootDir>/test/polyfills.js"
+    ]
+  }
+}
