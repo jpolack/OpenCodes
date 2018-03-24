@@ -1,3 +1,14 @@
+body {
+  background: #ccc;
+}
 h1{
-  color: red;
+  color: #FFF;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.box-build {
+}
+
+.inputFeld {
+  margin: 10px;
 }
