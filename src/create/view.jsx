@@ -7,7 +7,6 @@ import { Field, reduxForm } from 'redux-form';
 import Dialog, { DialogTitle } from 'material-ui/Dialog';
 import { CircularProgress } from 'material-ui/Progress';
 
-import '../assets/static/stylescreate.css';
 import '../assets/static/app.css';
 
 const CustomTextField = ({ input, label, contentType }) =>
@@ -61,7 +60,7 @@ const showLink = (link, onClose) => (
 
 export const App = ({ handleSubmit, onSubmit, loading, link, onClose }) => {
   return (
-    <div>
+    <div className="wrapper wrapperCreate">
       {loading && renderLoading()}
       {link && showLink(link, onClose)}
       <form onSubmit={handleSubmit(onSubmit)}>

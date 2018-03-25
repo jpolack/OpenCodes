@@ -1,16 +1,42 @@
-/* body {
-  padding: 70px auto 30px 100px;
-  text-align: center;
-} */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapperCreate {
+  background: url("/background_create.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.wrapperWrite {
+  background: url("/background.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.wrapperFeed {
+  background:#1c1c1c;
+  background-size: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  padding-top: 50px;
+  padding-bottom: 250px;
+}
 
 .box-build {
+  margin: 0 auto;
   width: 60%;
-  margin: 70px auto;
 }
 
 h1{
   color: #FFF;
   font-family: 'Montserrat', sans-serif;
+  margin-top: 0;
+  margin-bottom: 35px;
 }
 
 .contactForm {

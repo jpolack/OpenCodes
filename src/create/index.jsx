@@ -51,7 +51,12 @@ class Main extends React.Component {
 
   render() {
     return (
-      <View onSubmit={this.onSubmit} onClose={this.onClose} loading={this.state.loading} link={this.state.link} />
+      <View
+        onSubmit={this.onSubmit}
+        onClose={this.onClose}
+        loading={this.state.loading}
+        link={this.state.link}
+      />
     );
   }
 }
