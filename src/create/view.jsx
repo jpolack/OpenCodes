@@ -7,6 +7,8 @@ import { Field, reduxForm } from 'redux-form';
 import Dialog, { DialogTitle } from 'material-ui/Dialog';
 import { CircularProgress } from 'material-ui/Progress';
 
+import { withRouter } from 'react-router-dom';
+
 import '../assets/static/app.css';
 
 const CustomTextField = ({ input, label, contentType }) =>
@@ -35,7 +37,7 @@ const renderLoading = () => (
   </Dialog>
 );
 
-const showLink = (link, onClose) => (
+const showLink = (link, onClose, history) => (
   <Dialog open aria-labelledby="simple-dialog-title" onClose={onClose}>
     <DialogTitle id="simple-dialog-title">Die Zeitkapsel steht bereit</DialogTitle>
     <div style={{ textAlign: 'center', padding: 20, paddingTop: 0 }}>
@@ -50,15 +52,19 @@ const showLink = (link, onClose) => (
           marginTop: 10,
         }}
       >
-        <Button onClick={onClose} color="primary" variant="raised">
-          Alles klar ich habe die ID gespeichert
+        <Button
+          onClick={() => {
+            history.push(`/capsule/${link}`);
+          }} color="primary" variant="raised"
+        >
+          Jetzt Zeitkapsel befüllen
         </Button>
       </div>
     </div>
   </Dialog>
 );
 
-export const App = ({ handleSubmit, onSubmit, loading, link, onClose }) => {
+export const App = ({ handleSubmit, onSubmit, loading, link, onClose, history }) => {
   return (
     <div className="wrapper wrapperCreate">
       <img
@@ -67,7 +73,7 @@ export const App = ({ handleSubmit, onSubmit, loading, link, onClose }) => {
         }}
       />
       {loading && renderLoading()}
-      {link && showLink(link, onClose)}
+      {link && showLink(link, onClose, history)}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="box-build">
           <h1>Erstelle eine Zeitkapsel für dich und deine Freunde</h1>
@@ -89,6 +95,9 @@ export const App = ({ handleSubmit, onSubmit, loading, link, onClose }) => {
 
 
 App.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
   link: PropTypes.string,
   loading: PropTypes.bool.isRequired,
   handleSubmit: PropTypes.func.isRequired,
@@ -100,6 +109,6 @@ App.defaultProps = {
   link: undefined,
 };
 
-export default reduxForm({
+export default withRouter(reduxForm({
   form: 'create',
-})(App);
+})(App));
