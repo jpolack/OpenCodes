@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import moment from 'moment';
 import View from './view';
 
+moment.locale('de');
 
 class Main extends React.Component {
 
@@ -37,7 +39,7 @@ class Main extends React.Component {
           subtitle: values.subtitle,
           from: values.from,
         },
-        openingDate: new Date(),
+        openingDate: moment(values.openingDate, 'DD.MM.YYYY').add(2, 'hours').toISOString(),
         password: values.password,
       }),
     }).then(res => res.json());
@@ -46,7 +48,6 @@ class Main extends React.Component {
       loading: false,
       link: capsule.link,
     });
-    console.log('capsule', capsule.link);
   }
 
   render() {

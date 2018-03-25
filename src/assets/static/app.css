@@ -1,88 +1,96 @@
+html {
+    height: 100%;
+}
 
 body {
-  margin: 0;
-  padding: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .wrapperCreate {
-  background: url("/background_create.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
+    background: url("/background_create.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .wrapperWrite {
-  background: url("/background.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
+    background: url("/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .wrapperFeed {
-  background:#ccc;
-  background-size: 100%;
-  margin: 0;
+    background: url("/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .wrapper {
-  padding-top: 50px;
-  padding-bottom: 250px;
+    padding-top: 50px;
+    height: 900px;
 }
 
 .box-build {
-  margin: 0 auto;
-  width: 60%;
+    margin: 0 auto;
+    width: 60%;
 }
 
-h1{
-  color: #FFF;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 35px;
-  text-align: center;
+h1 {
+    color: #FFF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 35px;
+    text-align: center;
 }
 
 .contactForm {
-  background: #FFF;
-  border-radius: 3px;
-  padding: 50px;
+    background: #FFF;
+    border-radius: 3px;
+    padding: 50px;
 }
 
 .wrapper_inputFeld {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 
 .inputFeld {
-  width: 300px;
+    width: 300px;
 }
 
 .fullWidth {
-  width: 100%;
+    width: 100%;
 }
 
 .metaInfos {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .metaContent {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  color: #1c1c1c;
-  text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #1c1c1c;
+    text-align: center;
 }
 
 .textbox {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 25px;
-  color: #1c1c1c;
-  padding: 50px;
-  margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    color: #1c1c1c;
+    padding: 50px;
+    margin-bottom: 50px;
 }
 
 .textbox h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  margin: 25px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 25px 0;
 }
