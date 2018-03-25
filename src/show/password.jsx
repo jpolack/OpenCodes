@@ -6,6 +6,8 @@ import Input, { InputLabel } from 'material-ui/Input';    // INPUT
 import { FormControl } from 'material-ui/Form';
 import Dialog, { DialogTitle } from 'material-ui/Dialog';
 
+import { withRouter } from 'react-router-dom';
+
 const CustomTextField = ({ input, label, contentType }) =>
   <div className="wrapper_inputFeld" >
     <FormControl className="inputFeld">
@@ -23,7 +25,7 @@ CustomTextField.defaultProps = {
   contentType: 'text',
 };
 
-const App = ({ handleSubmit, onSubmit }) => {
+const App = ({ handleSubmit, onSubmit, history }) => {
   return (
     <div className="wrapper wrapperWrite">
       <img
@@ -31,7 +33,7 @@ const App = ({ handleSubmit, onSubmit }) => {
           marginLeft: 50,
         }}
       />
-      <Dialog open aria-labelledby="simple-dialog-title">
+      <Dialog open aria-labelledby="simple-dialog-title" onClose={() => history.push('/')}>
         <DialogTitle id="simple-dialog-title">Gib das Passwort ein</DialogTitle>
         <div style={{ textAlign: 'center', padding: 20 }}>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -47,10 +49,13 @@ const App = ({ handleSubmit, onSubmit }) => {
 };
 
 App.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
   handleSubmit: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
 };
 
-export default reduxForm({
+export default withRouter(reduxForm({
   form: 'password',
-})(App);
+})(App));

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Dialog, { DialogTitle } from 'material-ui/Dialog';
+import { withRouter } from 'react-router-dom';
 
 import moment from 'moment';
 
@@ -57,7 +58,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="wrapper wrapperWrite">
-        <Dialog open aria-labelledby="simple-dialog-title">
+        <Dialog open aria-labelledby="simple-dialog-title" onClose={() => this.props.history.push('/')}>
           <DialogTitle id="simple-dialog-title">Geduld du haben musst, mein junger Padawan</DialogTitle>
           <div style={{ textAlign: 'center', padding: 20 }}>
             <p>Diese Zeitkapsel öffnet sich in von selbst in:</p>
@@ -71,7 +72,10 @@ class App extends React.Component {
 }
 
 App.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
   openOn: PropTypes.string.isRequired,
 };
 
-export default App;
+export default withRouter(App);

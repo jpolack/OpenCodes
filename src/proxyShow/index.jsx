@@ -50,7 +50,9 @@ class App extends React.Component {
             marginLeft: 50,
           }}
         />
-        <Dialog open aria-labelledby="simple-dialog-title">
+        <Dialog
+          open aria-labelledby="simple-dialog-title" onClose={() => this.props.history.push('/')}
+        >
           <DialogTitle id="simple-dialog-title">Gib die Zeitkapsel ID ein</DialogTitle>
           <div style={{ textAlign: 'center', padding: 20 }}>
             <form onSubmit={handleSubmit(this.submit)}>
@@ -61,7 +63,7 @@ class App extends React.Component {
             </form>
           </div>
         </Dialog>
-      </div>
+      </div >
     );
   }
 }
