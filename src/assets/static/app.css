@@ -17,7 +17,7 @@ body {
 }
 
 .wrapperFeed {
-  background:#1c1c1c;
+  background:#ccc;
   background-size: 100%;
   margin: 0;
 }
@@ -35,8 +35,10 @@ body {
 h1{
   color: #FFF;
   font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   margin-top: 0;
   margin-bottom: 35px;
+  text-align: center;
 }
 
 .contactForm {
@@ -46,7 +48,7 @@ h1{
 }
 
 .wrapper_inputFeld {
-  margin: 20px;
+  margin: 20px 0;
 }
 
 .inputFeld {
@@ -55,4 +57,32 @@ h1{
 
 .fullWidth {
   width: 100%;
+}
+
+.metaInfos {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.metaContent {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #1c1c1c;
+  text-align: center;
+}
+
+.textbox {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  color: #1c1c1c;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+.textbox h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin: 25px 0;
 }

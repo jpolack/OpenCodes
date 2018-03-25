@@ -99,6 +99,7 @@ class Write extends React.Component {
     if (this.state.feed) {
       return (
         <View
+          feed={this.state.feed}
           onSubmit={this.writeToCapsule}
         />
       );
