@@ -14,14 +14,18 @@ export const App = () => {
           <Link to="/">
             <label className="menuItem">Zeitkapsel erstellen</label>
           </Link>
+          <Link to="/add">
+            <label className="menuItem">Zeitkapsel befüllen</label>
+          </Link>
           <Link to="/open">
             <label className="menuItem">Zeitkapsel öffnen</label>
           </Link>
         </nav>
         <Switch>
           <Route exact path="/" component={MainComp} />
+          <Route path="/add" component={ProxyShow('/capsule')} />
           <Route path="/capsule/:id" component={WriteComp} />
-          <Route path="/open" component={ProxyShow} />
+          <Route path="/open" component={ProxyShow('/show')} />
           <Route path="/show/:id" component={ShowComp} />
           <Redirect to="/" />
         </Switch>

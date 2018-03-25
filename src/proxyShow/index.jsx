@@ -38,7 +38,7 @@ class App extends React.Component {
   }
 
   submit(values) {
-    this.props.history.push(`/show/${values.id}`);
+    this.props.history.push(`${this.props.target}/${values.id}`);
   }
 
   render() {
@@ -67,13 +67,15 @@ class App extends React.Component {
 }
 
 App.propTypes = {
+  target: PropTypes.string.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
 };
 
-export default withRouter(reduxForm({
+export default target => withRouter(reduxForm({
   form: 'kapselId',
+  target,
 })(App));
 
