@@ -61,6 +61,11 @@ const showLink = (link, onClose) => (
 export const App = ({ handleSubmit, onSubmit, loading, link, onClose }) => {
   return (
     <div className="wrapper wrapperCreate">
+      <img
+        src="/logo.png" width="200" alt="logo" style={{
+          marginLeft: 50,
+        }}
+      />
       {loading && renderLoading()}
       {link && showLink(link, onClose)}
       <form onSubmit={handleSubmit(onSubmit)}>

@@ -22,17 +22,24 @@ const EmptyPaper = (memory, iter) => (
   </Paper>);
 
 export const App = ({ feed }) => {
-  return (<div className="wrapper wrapperFeed">
-    <div className="box-build">
-      <h1>Sieh dir deine Zeitkapsel an</h1>
-      {
-        (!feed.memories || feed.memories.length === 0) && EmptyPaper()
-      }
-      {
-        feed.memories && feed.memories.reverse().map(CreatePaper)
-      }
+  return (
+    <div className="wrapper wrapperFeed">
+      <img
+        src="/logo.png" width="200" alt="logo" style={{
+          marginLeft: 50,
+        }}
+      />
+      <div className="box-build">
+        <h1>Sieh dir deine Zeitkapsel an</h1>
+        {
+          (!feed.memories || feed.memories.length === 0) && EmptyPaper()
+        }
+        {
+          feed.memories && feed.memories.reverse().map(CreatePaper)
+        }
+      </div>
     </div>
-  </div>);
+  );
 };
 
 App.propTypes = {

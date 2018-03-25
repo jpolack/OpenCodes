@@ -26,6 +26,11 @@ CustomTextField.defaultProps = {
 const App = ({ handleSubmit, onSubmit }) => {
   return (
     <div className="wrapper wrapperWrite">
+      <img
+        src="/logo.png" width="200" alt="logo" style={{
+          marginLeft: 50,
+        }}
+      />
       <Dialog open aria-labelledby="simple-dialog-title">
         <DialogTitle id="simple-dialog-title">Gib das Passwort ein</DialogTitle>
         <div style={{ textAlign: 'center', padding: 20 }}>

@@ -47,6 +47,11 @@ CustomTextAreaField.defaultProps = {
 export const App = ({ handleSubmit, onSubmit, feed }) => {
   return (
     <div className="wrapper wrapperWrite">
+      <img
+        src="/logo.png" width="200" alt="logo" style={{
+          marginLeft: 50,
+        }}
+      />
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="box-build">
           <h1>Schreibe etwas für deine Freunde</h1>

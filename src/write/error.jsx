@@ -4,6 +4,11 @@ import Dialog, { DialogTitle } from 'material-ui/Dialog';
 
 const App = ({ text }) =>
   <div className="wrapper wrapperWrite">
+    <img
+      src="/logo.png" width="200" alt="logo" style={{
+        marginLeft: 50,
+      }}
+    />
     <Dialog open aria-labelledby="simple-dialog-title">
       <DialogTitle id="simple-dialog-title">Fehler</DialogTitle>
       <div style={{ textAlign: 'center', padding: 20 }}>
