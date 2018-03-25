@@ -39,7 +39,7 @@ const showLink = (link, onClose) => (
   <Dialog open aria-labelledby="simple-dialog-title" onClose={onClose}>
     <DialogTitle id="simple-dialog-title">Die Zeitkapsel steht bereit</DialogTitle>
     <div style={{ textAlign: 'center', padding: 20, paddingTop: 0 }}>
-      <p>Sichere den Link, um auf deine Zeitkapsel zuzugreifen</p>
+      <p>Sichere diese ID, um auf deine Zeitkapsel zuzugreifen</p>
       <Input
         multiline
         value={link}
@@ -51,7 +51,7 @@ const showLink = (link, onClose) => (
         }}
       >
         <Button onClick={onClose} color="primary" variant="raised">
-          Alles klar ich habe den Link gespeichert
+          Alles klar ich habe die ID gespeichert
         </Button>
       </div>
     </div>

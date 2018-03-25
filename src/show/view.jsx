@@ -31,6 +31,12 @@ export const App = ({ feed }) => {
       />
       <div className="box-build">
         <h1>Sieh dir deine Zeitkapsel an</h1>
+        <Paper className="textbox" elevation={4} style={{ marginBottom: 50, backgroundColor: '#1c1c1caa', color: '#fff' }}>
+          <h2 style={{ textDecoration: 'underline' }}>Deine Zeitkapsel</h2>
+          <h3>{feed.capsule.title}</h3>
+          <h4>{feed.capsule.subtitle}</h4>
+          <p>Von: {feed.capsule.from}</p>
+        </Paper>
         {
           (!feed.memories || feed.memories.length === 0) && EmptyPaper()
         }
