@@ -2,11 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import moment from 'moment';
 import View from './view';
 import PasswordMask from './password';
 import Loading from './loading';
 import Error from './error';
+import Notyet from './notyet';
 
+moment.locale('de');
 
 class Write extends React.Component {
   constructor(props) {
@@ -60,6 +63,10 @@ class Write extends React.Component {
     }
 
     if (this.state.feed) {
+      if (moment().isBefore(moment.utc(this.state.feed.openingDate))) {
+        return (<Notyet openOn={this.state.feed.openingDate} />);
+      }
+
       return (
         <View feed={this.state.feed} />
       );

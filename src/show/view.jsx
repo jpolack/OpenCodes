@@ -16,12 +16,20 @@ const CreatePaper = (memory, iter) => (
     <p>{memory.message}</p>
   </Paper>);
 
+const EmptyPaper = (memory, iter) => (
+  <Paper key={iter} className="textbox" elevation={4}>
+    <h2>Bis jetzt befinden sich keine Erinnerungen in deiner Zeitkapsel</h2>
+  </Paper>);
+
 export const App = ({ feed }) => {
   return (<div className="wrapper wrapperFeed">
     <div className="box-build">
       <h1>Sieh dir deine Zeitkapsel an</h1>
       {
-        feed.memories.reverse().map(CreatePaper)
+        (!feed.memories || feed.memories.length === 0) && EmptyPaper()
+      }
+      {
+        feed.memories && feed.memories.reverse().map(CreatePaper)
       }
     </div>
   </div>);
@@ -35,12 +43,13 @@ App.propTypes = {
       from: PropTypes.string.isRequired,
     }),
     openingDate: PropTypes.string.isRequired,
+    memoryCount: PropTypes.number.isRequired,
     memories: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       message: PropTypes.string.isRequired,
       creationDate: PropTypes.string.isRequired,
-    })).isRequired,
+    })),
   }).isRequired,
 };
 App.defaultProps = {
