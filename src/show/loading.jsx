@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Dialog, { DialogTitle } from 'material-ui/Dialog';
+import { CircularProgress } from 'material-ui/Progress';
 
 const App = ({ text }) =>
   <div className="wrapper wrapperWrite">
     <Dialog open aria-labelledby="simple-dialog-title">
-      <DialogTitle id="simple-dialog-title">Fehler</DialogTitle>
+      <DialogTitle id="simple-dialog-title">{text}</DialogTitle>
       <div style={{ textAlign: 'center', padding: 20 }}>
-        <p>{text}</p>
+        <CircularProgress />
       </div>
     </Dialog>
   </div>;

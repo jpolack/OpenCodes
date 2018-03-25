@@ -3,6 +3,7 @@ import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-d
 
 import MainComp from './create';
 import WriteComp from './write';
+import ShowComp from './show';
 
 export const App = () => {
   return (
@@ -11,6 +12,7 @@ export const App = () => {
         <Switch>
           <Route exact path="/" component={MainComp} />
           <Route path="/capsule/:id" component={WriteComp} />
+          <Route path="/show/:id" component={ShowComp} />
           <Redirect to="/" />
         </Switch>
       </div>

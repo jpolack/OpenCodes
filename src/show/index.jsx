@@ -6,7 +6,6 @@ import View from './view';
 import PasswordMask from './password';
 import Loading from './loading';
 import Error from './error';
-import Done from './done';
 
 
 class Write extends React.Component {
@@ -17,7 +16,6 @@ class Write extends React.Component {
     };
 
     this.loadCapsule = this.loadCapsule.bind(this);
-    this.writeToCapsule = this.writeToCapsule.bind(this);
   }
 
   async loadCapsule(id, password) {
@@ -51,56 +49,19 @@ class Write extends React.Component {
     });
   }
 
-  async writeToCapsule(data) {
-    this.setState({
-      loading: true,
-    });
-    const res = await fetch(`http://localhost:8000/capsule/${this.props.match.params.id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        password: 'pass',
-        memory: {
-          name: data.name,
-          title: data.title,
-          message: data.message,
-        },
-      }),
-    });
-    if (res.status >= 400) {
-      this.setState({
-        loading: false,
-        error: 'Daten konnten nicht gespeichert werden',
-      });
-      return;
-    }
-    this.setState({
-      loading: false,
-      success: 'Deine Daten wurden der Zeitkapsel hinzugefüht',
-    });
-  }
-
 
   render() {
-    if (this.state.success) {
-      return <Done text={this.state.success} />;
-    }
-
     if (this.state.error) {
       return <Error text={this.state.error} />;
     }
 
     if (this.state.loading) {
-      return <Loading text={this.state.feed ? 'Schreibe in die Zeitkapsel' : 'Die Zeitkapsel wird entsperrt'} />;
+      return <Loading text={'Die Zeitkapsel wird entsperrt'} />;
     }
 
     if (this.state.feed) {
       return (
-        <View
-          onSubmit={this.writeToCapsule}
-        />
+        <View feed={this.state.feed} />
       );
     }
 

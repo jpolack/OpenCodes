@@ -1,12 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { reduxForm } from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
 import Button from 'material-ui/Button';    // BUTTON
 import Input, { InputLabel } from 'material-ui/Input';    // INPUT
 import { FormControl } from 'material-ui/Form';
 
 import '../assets/static/app.css';
 
+const CustomTextField = ({ input, label, contentType }) =>
+  <div className="wrapper_inputFeld" >
+    <FormControl className="inputFeld">
+      <InputLabel>{label}</InputLabel>
+      <Input {...input} type={contentType} />
+    </FormControl>
+  </div>;
+
+CustomTextField.propTypes = {
+  label: PropTypes.string.isRequired,
+  contentType: PropTypes.string,
+  input: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+};
+CustomTextField.defaultProps = {
+  contentType: 'text',
+};
+
+const CustomTextAreaField = ({ input, label, contentType }) =>
+  <div className="wrapper_inputFeld" >
+    <FormControl className="inputFeld fullWidth">
+      <InputLabel>{label}</InputLabel>
+      <Input {...input} type={contentType} multiline />
+    </FormControl>
+  </div>;
+
+CustomTextAreaField.propTypes = {
+  label: PropTypes.string.isRequired,
+  contentType: PropTypes.string,
+  input: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+};
+CustomTextAreaField.defaultProps = {
+  contentType: 'text',
+};
 
 export const App = ({ handleSubmit, onSubmit }) => {
   return (
@@ -15,26 +48,11 @@ export const App = ({ handleSubmit, onSubmit }) => {
         <div className="box-build">
           <h1>Schreibe etwas für deine Freunde</h1>
           <div className="contactForm">
-            <div className="wrapper_inputFeld">
-              <FormControl className="inputFeld">
-                <InputLabel htmlFor="name-simple">Dein Name</InputLabel>
-                <Input id="name-simple" />
-              </FormControl>
-            </div>
-            <div className="wrapper_inputFeld">
-              <FormControl className="inputFeld">
-                <InputLabel htmlFor="name-simple">Titel</InputLabel>
-                <Input id="name-simple" />
-              </FormControl>
-            </div>
-            <div className="wrapper_inputFeld">
-              <FormControl className="inputFeld fullWidth">
-                <InputLabel htmlFor="name-simple">Schreib deine Nachricht</InputLabel>
-                <Input id="name-simple" multiline />
-              </FormControl>
-            </div>
+            <Field name="name" component={CustomTextField} label="Dein Name" />
+            <Field name="title" component={CustomTextField} label="Titel" />
+            <Field name="message" component={CustomTextAreaField} label="Schreib deine Nachricht" />
 
-            <Button style={{ marginTop: 20 }} variant="raised" color="primary">
+            <Button style={{ marginTop: 20 }} variant="raised" color="primary" type="submit">
               Jetzt Erstellen
             </Button>
           </div>
@@ -45,7 +63,6 @@ export const App = ({ handleSubmit, onSubmit }) => {
 };
 
 App.propTypes = {
-  // loading: PropTypes.bool.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
 };

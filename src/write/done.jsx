@@ -5,7 +5,7 @@ import Dialog, { DialogTitle } from 'material-ui/Dialog';
 const App = ({ text }) =>
   <div className="wrapper wrapperWrite">
     <Dialog open aria-labelledby="simple-dialog-title">
-      <DialogTitle id="simple-dialog-title">Fehler</DialogTitle>
+      <DialogTitle id="simple-dialog-title">Erfolg</DialogTitle>
       <div style={{ textAlign: 'center', padding: 20 }}>
         <p>{text}</p>
       </div>
